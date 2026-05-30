@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Golden Fish Bar — Fish &amp; Chips · Centre Point · King's Lynn</title>
+<meta name="description" content="Golden Fish Bar — traditional fish and chips at 1 Centre Point, King's Lynn PE30 4SR. Fried to order. Call ahead for collection on 01553 766519.">
+<meta name="theme-color" content="#1B3A5C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B3A5C;
+  --navy-deep:#102342;
+  --paper:#F5F5F5;
+  --paper-warm:#EFE7D6;
+  --ink:#10131A;
+  --batter:#E8A85B;
+  --batter-deep:#C9873E;
+  --rule:rgba(16,19,26,0.22);
+  --rule-soft:rgba(16,19,26,0.10);
+  --pale:rgba(245,245,245,0.74);
+  --display:"Bodoni Moda", "Times New Roman", serif;
+  --body:"DM Sans", "Helvetica Neue", system-ui, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-size:17px;
+  line-height:1.55;
+  font-feature-settings:"ss01","ss02","cv01";
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+
+/* ——— newspaper-grain paper texture (CSS only) ——— */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:60;mix-blend-mode:multiply;opacity:.06;background-image:
+  radial-gradient(circle at 12% 18%, #000 1px, transparent 1.5px),
+  radial-gradient(circle at 72% 38%, #000 1px, transparent 1.5px),
+  radial-gradient(circle at 38% 78%, #000 1px, transparent 1.5px),
+  radial-gradient(circle at 88% 88%, #000 1px, transparent 1.5px);
+  background-size:7px 7px,11px 11px,5px 5px,13px 13px;}
+
+/* ——— top ribbon ——— */
+.ribbon{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--body);
+  font-size:11.5px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.ribbon-inner{
+  max-width:1240px;margin:0 auto;padding:9px 22px;
+  display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.ribbon-inner span:nth-child(2){color:var(--batter)}
+.ribbon-inner a{border-bottom:1px solid rgba(245,245,245,.35);padding-bottom:1px}
+
+/* ——— nav masthead ——— */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:var(--paper);
+  border-bottom:2px double var(--ink);
+}
+.nav-row{
+  max-width:1240px;margin:0 auto;padding:18px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:700;
+  font-size:26px;
+  letter-spacing:.005em;
+  color:var(--navy);
+  line-height:1;
+  display:inline-flex;align-items:baseline;gap:8px;
+}
+.brand-sub{
+  font-family:var(--body);
+  font-style:normal;
+  font-weight:600;
+  font-size:10px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--ink);
+  border-left:1px solid var(--rule);
+  padding-left:10px;
+}
+.nav-links{display:none;gap:30px;align-items:center}
+.nav-links a{
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  position:relative;padding:6px 0;
+}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--navy);color:var(--paper);
+  padding:11px 18px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;
+  border:1px solid var(--navy);
+  transition:background .2s,color .2s;
+}
+.nav-cta:hover{background:var(--batter);color:var(--ink);border-color:var(--batter)}
+.nav-cta .dot{width:6px;height:6px;border-radius:50%;background:var(--batter);box-shadow:0 0 0 3px rgba(232,168,91,.25);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+@media (min-width:880px){.nav-links{display:flex}}
+
+/* ——— hero — newspaper masthead ——— */
+.hero{
+  background:var(--paper);
+  padding:42px 22px 56px;
+  border-bottom:2px double var(--ink);
+  position:relative;
+}
+.hero-wrap{max-width:1240px;margin:0 auto;text-align:center}
+.hero-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;
+  border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  padding:8px 4px;margin-bottom:34px;color:var(--ink);
+}
+.hero-meta span:nth-child(2){color:var(--navy)}
+.masthead{
+  font-family:var(--display);
+  color:var(--navy);
+  margin:0;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  text-shadow:0 1px 0 rgba(27,58,92,.06);
+}
+.masthead .line-golden{
+  font-weight:900;font-style:italic;
+  font-size:clamp(72px,18vw,220px);
+  line-height:.84;letter-spacing:-0.012em;
+}
+.masthead .line-fishbar{
+  font-weight:400;font-style:italic;
+  font-size:clamp(28px,6.4vw,76px);
+  line-height:1;letter-spacing:.02em;
+  color:var(--ink);
+  position:relative;padding:14px 28px 0;
+}
+.masthead .line-fishbar::before{
+  content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);
+  width:120px;height:1.5px;background:var(--batter-deep);
+}
+.masthead-sub{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:400;
+  color:var(--ink);
+  font-size:clamp(22px,4.4vw,46px);
+  letter-spacing:.005em;
+  margin:14px 0 0;
+  line-height:1.05;
+}
+.hero-rule{
+  display:flex;align-items:center;gap:14px;
+  max-width:520px;margin:30px auto 0;
+}
+.hero-rule .line{flex:1;height:1px;background:var(--ink)}
+.hero-rule .stamp{
+  width:60px;height:60px;border-radius:50%;
+  border:1.5px solid var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--batter);
+  color:var(--navy);
+  flex-shrink:0;
+}
+.hero-stand{
+  margin-top:34px;
+  font-family:var(--body);
+  font-size:13px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;
+  color:var(--ink);
+}
+.hero-stand span{color:var(--navy)}
+.hero-cta-row{
+  margin-top:38px;
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 22px;
+  font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  border:1.5px solid var(--ink);
+  transition:transform .15s ease, background .2s, color .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+.btn-primary:hover{background:var(--navy-deep);border-color:var(--navy-deep)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn .arrow{font-family:var(--display);font-weight:700;font-size:14px}
+
+/* ——— section scaffolding ——— */
+section{padding:90px 22px}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--body);
+  font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:600;
+  color:var(--navy);
+  margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:24px;height:1.5px;background:var(--batter-deep)}
+.eyebrow .num{color:var(--ink);font-family:var(--display);font-style:italic;font-weight:700;font-size:13px;letter-spacing:0}
+.section-title{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:500;
+  font-size:clamp(36px,5.6vw,68px);
+  line-height:1.02;
+  letter-spacing:-0.005em;
+  color:var(--ink);
+  margin:0 0 22px;
+}
+.section-title em{color:var(--navy);font-weight:700}
+
+/* ——— about section ——— */
+.about{
+  background:var(--paper-warm);
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.about-grid{display:grid;gap:54px;align-items:start;grid-template-columns:1fr}
+@media (min-width:920px){.about-grid{grid-template-columns:1.05fr 1fr;gap:80px}}
+.about-lede{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(22px,3vw,32px);
+  line-height:1.28;
+  color:var(--navy);
+  margin:0 0 24px;
+}
+.about-lede::first-letter{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:900;
+  font-size:5em;
+  float:left;
+  line-height:.78;
+  padding:.06em .12em 0 0;
+  color:var(--batter-deep);
+}
+.about-body p{margin:0 0 16px;max-width:48ch}
+.about-card{
+  background:var(--paper);
+  border:1px solid var(--ink);
+  padding:30px 28px;
+  position:relative;
+}
+.about-card::before{
+  content:"";position:absolute;top:8px;left:8px;right:-8px;bottom:-8px;
+  background:var(--navy);z-index:-1;
+}
+.about-card h3{
+  font-family:var(--display);font-style:italic;font-weight:700;
+  font-size:22px;color:var(--navy);margin:0 0 14px;
+}
+.fact-row{
+  display:flex;justify-content:space-between;gap:18px;
+  padding:13px 0;border-bottom:1px dashed var(--rule);
+  font-size:14.5px;
+}
+.fact-row:last-child{border-bottom:none}
+.fact-row dt{font-weight:600;letter-spacing:.04em;color:var(--ink)}
+.fact-row dd{margin:0;text-align:right;color:var(--navy);font-weight:500}
+
+/* ——— services / what we serve ——— */
+.serves{
+  background:var(--navy);color:var(--paper);
+  position:relative;overflow:hidden;
+}
+.serves::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(transparent 0, transparent calc(100% - 1px), rgba(245,245,245,.05) 100%);
+  background-size:100% 32px;pointer-events:none;
+}
+.serves .eyebrow{color:var(--batter)}
+.serves .eyebrow::before{background:var(--batter)}
+.serves .eyebrow .num{color:var(--paper)}
+.serves .section-title{color:var(--paper)}
+.serves .section-title em{color:var(--batter);font-style:italic}
+.serves-head{display:grid;gap:30px;align-items:end;grid-template-columns:1fr}
+@media (min-width:880px){.serves-head{grid-template-columns:1.4fr 1fr;gap:60px}}
+.serves-head p{
+  font-size:16px;line-height:1.6;color:var(--pale);max-width:46ch;margin:0;
+}
+.serves-grid{
+  margin-top:60px;
+  display:grid;gap:0;
+  grid-template-columns:1fr;
+  border-top:1px solid rgba(245,245,245,.18);
+}
+@media (min-width:720px){.serves-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1040px){.serves-grid{grid-template-columns:repeat(3,1fr)}}
+.serve{
+  padding:34px 30px 36px;
+  border-bottom:1px solid rgba(245,245,245,.18);
+  border-right:1px solid rgba(245,245,245,.18);
+  position:relative;
+  transition:background .25s ease;
+}
+.serve:hover{background:rgba(245,245,245,.04)}
+.serve:hover .serve-num{color:var(--batter)}
+.serve-num{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:14px;color:rgba(245,245,245,.5);
+  letter-spacing:0;margin-bottom:22px;
+  display:block;transition:color .25s ease;
+}
+.serve h3{
+  font-family:var(--display);font-style:italic;font-weight:700;
+  font-size:30px;line-height:1.08;margin:0 0 14px;color:var(--paper);
+}
+.serve p{
+  font-size:14.5px;line-height:1.55;color:var(--pale);margin:0;
+}
+
+/* ——— gallery (CSS-only placeholder cards) ——— */
+.gallery{background:var(--paper)}
+.gallery-head{display:grid;gap:28px;align-items:end;grid-template-columns:1fr;margin-bottom:46px}
+@media (min-width:840px){.gallery-head{grid-template-columns:1.3fr 1fr;gap:60px}}
+.gallery-head p{font-size:15.5px;color:var(--ink);max-width:46ch;line-height:1.6;margin:0}
+.gallery-grid{
+  display:grid;gap:18px;
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows:repeat(3,180px);
+}
+@media (min-width:720px){
+  .gallery-grid{
+    grid-template-columns:repeat(6,1fr);
+    grid-template-rows:200px 200px;
+  }
+}
+.tile{
+  position:relative;overflow:hidden;
+  border:1px solid var(--ink);
+  background:var(--paper-warm);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding:18px 18px;
+  color:var(--ink);
+}
+.tile::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(135deg, transparent 0 10px, rgba(27,58,92,.05) 10px 20px);
+  pointer-events:none;
+}
+.tile .tag{
+  font-family:var(--body);font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;
+  background:var(--ink);color:var(--paper);padding:6px 10px;
+}
+.tile .num{
+  font-family:var(--display);font-style:italic;font-weight:700;font-size:22px;color:var(--navy);
+}
+@media (min-width:720px){
+  .tile.t1{grid-column:1 / span 3;grid-row:1 / span 2}
+  .tile.t2{grid-column:4 / span 2;grid-row:1 / span 1}
+  .tile.t3{grid-column:6 / span 1;grid-row:1 / span 1}
+  .tile.t4{grid-column:4 / span 1;grid-row:2 / span 1}
+  .tile.t5{grid-column:5 / span 2;grid-row:2 / span 1}
+}
+.tile.t1{background:var(--navy);color:var(--paper)}
+.tile.t1::before{background:repeating-linear-gradient(135deg, transparent 0 14px, rgba(232,168,91,.10) 14px 28px)}
+.tile.t1 .num{color:var(--batter)}
+.tile.t1 .tag{background:var(--batter);color:var(--ink)}
+.tile.t3{background:var(--batter)}
+.tile.t3 .tag{background:var(--navy)}
+.tile.t4{background:var(--ink);color:var(--paper)}
+.tile.t4 .num{color:var(--batter)}
+.tile.t4 .tag{background:var(--paper);color:var(--ink)}
+
+.gallery-note{
+  margin-top:30px;padding:18px 22px;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink);
+  text-align:center;
+}
+.gallery-note span{color:var(--navy);font-family:var(--display);font-style:italic;letter-spacing:0;font-weight:700;text-transform:none;font-size:16px;padding:0 6px}
+
+/* ——— contact ——— */
+.contact{background:var(--paper-warm);border-top:1px solid var(--rule)}
+.contact-grid{display:grid;gap:42px;grid-template-columns:1fr;align-items:start}
+@media (min-width:920px){.contact-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.contact-card{background:var(--paper);border:1px solid var(--ink);padding:36px 32px}
+.contact-card h3{font-family:var(--display);font-style:italic;font-weight:700;font-size:26px;color:var(--navy);margin:0 0 22px}
+.contact-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:22px}
+.contact-list li{display:flex;flex-direction:column;gap:4px}
+.contact-list .label{font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.contact-list .val{font-family:var(--display);font-style:italic;font-weight:700;font-size:22px;color:var(--navy);line-height:1.2}
+.contact-list a.val:hover{color:var(--batter-deep)}
+.map{
+  border:1px solid var(--ink);
+  background:var(--ink);
+  overflow:hidden;
+  aspect-ratio:1/1.05;
+  position:relative;
+}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.6) contrast(1.05) sepia(.04)}
+.map-cap{
+  position:absolute;left:0;right:0;bottom:0;
+  background:var(--paper);
+  padding:14px 18px;
+  border-top:1px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--ink);
+}
+.map-cap span{color:var(--navy);font-family:var(--display);font-style:italic;font-weight:700;letter-spacing:0;text-transform:none;font-size:14px}
+
+/* ——— footer ——— */
+.foot{
+  background:var(--ink);color:var(--paper);
+  padding:64px 22px 28px;
+}
+.foot-wrap{max-width:1180px;margin:0 auto}
+.foot-mast{
+  font-family:var(--display);font-style:italic;font-weight:900;
+  font-size:clamp(46px,9vw,110px);line-height:.86;color:var(--batter);
+  letter-spacing:-.005em;margin:0 0 14px;
+}
+.foot-mast .small{color:var(--paper);font-weight:400;font-size:.36em;display:block;letter-spacing:.36em;text-transform:uppercase;margin-top:14px;font-style:normal;font-family:var(--body);}
+.foot-grid{
+  margin-top:46px;display:grid;gap:34px;
+  grid-template-columns:1fr;
+  border-top:1px solid rgba(245,245,245,.18);padding-top:34px;
+}
+@media (min-width:780px){.foot-grid{grid-template-columns:repeat(3,1fr);gap:48px}}
+.foot-col h4{
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;
+  color:var(--batter);margin:0 0 16px;
+}
+.foot-col p,.foot-col a{font-size:14px;color:var(--pale);line-height:1.6}
+.foot-col a:hover{color:var(--batter)}
+.foot-col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-base{
+  margin-top:46px;padding-top:22px;border-top:1px solid rgba(245,245,245,.18);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:rgba(245,245,245,.5);
+}
+
+/* ——— rule lines & dividers used in body ——— */
+.rule-thick{border:0;border-top:2px double var(--ink);margin:0}
+
+/* ——— reduced motion ——— */
+@media (prefers-reduced-motion:reduce){
+  .nav-cta .dot{animation:none}
+  .btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="ribbon" role="banner">
+  <div class="ribbon-inner">
+    <span>Centre Point · King's Lynn · PE30 4SR</span>
+    <span>Fried to order</span>
+    <a href="tel:+441553766519">Call · 01553 766519</a>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav-row">
+    <a href="#home" class="brand">
+      Golden Fish Bar
+      <span class="brand-sub">Est. King's Lynn</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#serves">What we serve</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Find us</a>
+    </div>
+    <a class="nav-cta" href="tel:+441553766519">
+      <span class="dot" aria-hidden="true"></span>
+      Order by phone
+    </a>
+  </div>
+</nav>
+
+<header id="home" class="hero">
+  <div class="hero-wrap">
+    <div class="hero-meta" aria-hidden="true">
+      <span>Vol. I</span>
+      <span>The Chip Paper</span>
+      <span>1 Centre Point</span>
+    </div>
+
+    <h1 class="masthead">
+      <span class="line-golden">Golden</span>
+      <span class="line-fishbar">Fish Bar</span>
+    </h1>
+    <p class="masthead-sub">Fish &amp; chips, fried to order in King's Lynn.</p>
+
+    <div class="hero-rule" aria-hidden="true">
+      <span class="line"></span>
+      <span class="stamp">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M5 18 C 9 11, 16 9, 22 12 L 28 8 L 28 28 L 22 24 C 16 27, 9 25, 5 18 Z" stroke="#1B3A5C" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+          <circle cx="11" cy="17" r="1" fill="#1B3A5C"/>
+          <path d="M22 12 L 22 24" stroke="#1B3A5C" stroke-width="1" stroke-dasharray="1.5 2"/>
+        </svg>
+      </span>
+      <span class="line"></span>
+    </div>
+
+    <p class="hero-stand">
+      Open for collection · <span>Call ahead on 01553 766519</span>
+    </p>
+
+    <div class="hero-cta-row">
+      <a class="btn btn-primary" href="tel:+441553766519">
+        Call to order <span class="arrow">→</span>
+      </a>
+      <a class="btn btn-ghost" href="#serves">
+        See what we serve
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="eyebrow"><span class="num">01</span> The shop</p>
+        <h2 class="section-title">A proper chippy on <em>Centre Point</em>.</h2>
+        <p class="about-lede">
+          We've been frying fish and cutting chips for the people of King's Lynn — no fuss, no shortcuts, no microwaves.
+        </p>
+        <div class="about-body">
+          <p>
+            Golden Fish Bar sits at 1 Centre Point, a short walk from the bus station and the market square. We're a takeaway shop, plain and simple — you ring ahead, we cook it fresh, you collect it hot.
+          </p>
+          <p>
+            What you get is what a chip shop is meant to be: fish fried to order in a clean batter, chips cut from whole potatoes, salt and vinegar on the side. That's the whole idea.
+          </p>
+          <p>
+            If you've not been before, ring the shop and we'll talk you through what's on today.
+          </p>
+        </div>
+      </div>
+
+      <aside class="about-card" aria-label="At a glance">
+        <h3>At a glance</h3>
+        <dl>
+          <div class="fact-row"><dt>Style</dt><dd>Traditional chippy</dd></div>
+          <div class="fact-row"><dt>Service</dt><dd>Takeaway · collection</dd></div>
+          <div class="fact-row"><dt>Cooked</dt><dd>To order</dd></div>
+          <div class="fact-row"><dt>Phone</dt><dd>01553 766519</dd></div>
+          <div class="fact-row"><dt>Find us</dt><dd>1 Centre Point, PE30 4SR</dd></div>
+          <div class="fact-row"><dt>Card &amp; cash</dt><dd>Call to confirm</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="serves" class="serves">
+  <div class="wrap">
+    <div class="serves-head">
+      <div>
+        <p class="eyebrow"><span class="num">02</span> What we serve</p>
+        <h2 class="section-title">The <em>short list</em>, done well.</h2>
+      </div>
+      <p>
+        A traditional chippy menu — fish, chips, the classic sides. We don't publish a full price list online because prices move with the market; ring the shop and we'll quote you on what you fancy.
+      </p>
+    </div>
+
+    <div class="serves-grid">
+      <article class="serve">
+        <span class="serve-num">No. 01</span>
+        <h3>Fish &amp; chips</h3>
+        <p>The headline act. White fish in a crisp batter, hand-cut chips, fried fresh when you order. Salt and vinegar on request.</p>
+      </article>
+
+      <article class="serve">
+        <span class="serve-num">No. 02</span>
+        <h3>Chips by themselves</h3>
+        <p>Large or regular. Cooked the way they should be — golden outside, fluffy in the middle. Ask for scraps.</p>
+      </article>
+
+      <article class="serve">
+        <span class="serve-num">No. 03</span>
+        <h3>Battered classics</h3>
+        <p>Sausage, pie, the usual suspects in batter. Old-school chippy favourites that haven't gone out of fashion.</p>
+      </article>
+
+      <article class="serve">
+        <span class="serve-num">No. 04</span>
+        <h3>Sides &amp; sauces</h3>
+        <p>Mushy peas, curry sauce, gravy, pickled bits. Ring ahead to check what's on the counter today.</p>
+      </article>
+
+      <article class="serve">
+        <span class="serve-num">No. 05</span>
+        <h3>Family orders</h3>
+        <p>Phoning for a few people? Tell us how many, give us fifteen minutes, we'll have it ready hot for collection.</p>
+      </article>
+
+      <article class="serve">
+        <span class="serve-num">No. 06</span>
+        <h3>Not on the list?</h3>
+        <p>If you don't see it here, just ask when you call. We'd rather tell you what's on than pretend to serve something we don't.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <p class="eyebrow"><span class="num">03</span> Gallery</p>
+        <h2 class="section-title">Photos of the shop, <em>coming soon</em>.</h2>
+      </div>
+      <p>
+        We're putting together a proper set of photos — the fryers in action, the counter, the chips just out of the oil. While we get them, the spaces below are kept for the real thing rather than stock shots.
+      </p>
+    </div>
+
+    <div class="gallery-grid" aria-label="Gallery placeholders">
+      <div class="tile t1"><span class="num">No. 01</span><span class="tag">Counter · hot</span></div>
+      <div class="tile t2"><span class="num">No. 02</span><span class="tag">Fish · in batter</span></div>
+      <div class="tile t3"><span class="num">No. 03</span><span class="tag">Chips</span></div>
+      <div class="tile t4"><span class="num">No. 04</span><span class="tag">Shopfront</span></div>
+      <div class="tile t5"><span class="num">No. 05</span><span class="tag">Wrapped &amp; ready</span></div>
+    </div>
+
+    <p class="gallery-note">Real photos · <span>coming soon</span> · placeholders only, no stock images</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow"><span class="num">04</span> Find us</p>
+    <h2 class="section-title">Centre Point, <em>King's Lynn</em>.</h2>
+
+    <div class="contact-grid" style="margin-top:34px">
+      <div class="contact-card">
+        <h3>Phone &amp; address</h3>
+        <ul class="contact-list">
+          <li>
+            <span class="label">Phone</span>
+            <a class="val" href="tel:+441553766519">01553 766519</a>
+          </li>
+          <li>
+            <span class="label">Address</span>
+            <span class="val" style="font-size:19px">1 Centre Point<br>King's Lynn<br>PE30 4SR</span>
+          </li>
+          <li>
+            <span class="label">Service</span>
+            <span class="val" style="font-size:19px">Takeaway · collection only</span>
+          </li>
+          <li>
+            <span class="label">Opening hours</span>
+            <span class="val" style="font-size:18px">Ring ahead — we cook to order, so a quick call confirms what's on and when it'll be ready.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="map">
+        <iframe
+          title="Map showing 1 Centre Point, King's Lynn PE30 4SR"
+          loading="lazy"
+          src="https://www.google.com/maps?q=1%20Centre%20Point%2C%20King's%20Lynn%2C%20PE30%204SR&output=embed"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+        <div class="map-cap">
+          <span>PE30 4SR</span>
+          <a href="https://www.google.com/maps?q=1%20Centre%20Point%2C%20King's%20Lynn%2C%20PE30%204SR" target="_blank" rel="noopener">Open in Maps →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-wrap">
+    <p class="foot-mast">Golden Fish Bar<span class="small">1 Centre Point · King's Lynn · PE30 4SR</span></p>
+
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4>The shop</h4>
+        <p>A traditional fish-and-chip takeaway on Centre Point, King's Lynn. Cooked fresh when you order — call ahead for collection.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+441553766519">01553 766519</a></li>
+          <li>1 Centre Point</li>
+          <li>King's Lynn, PE30 4SR</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#about">About the shop</a></li>
+          <li><a href="#serves">What we serve</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Find us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-base">
+      <span>© Golden Fish Bar · King's Lynn</span>
+      <span>Site by Binning.AI</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
